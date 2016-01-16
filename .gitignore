@@ -110,5 +110,4 @@ buildNumber.properties
 /out/
 
 # mpeltonen/sbt-idea plugin
-/src/test/resources/Config.groovy
 .idea_modules/

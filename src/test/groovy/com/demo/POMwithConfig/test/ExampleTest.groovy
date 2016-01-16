@@ -4,9 +4,9 @@ import org.openqa.selenium.support.PageFactory
 import org.testng.Assert
 import org.testng.annotations.Test
 
-import com.demo.POM.BaseTest
-import com.demo.POM.pages.HomePage
-import com.demo.POM.pages.QuestionsPage
+import com.demo.POMwithConfig.BaseTest
+import com.demo.POMwithConfig.pages.HomePage
+import com.demo.POMwithConfig.pages.QuestionsPage
 
 class ExampleTest extends BaseTest{
   

@@ -1,4 +1,4 @@
-package com.demo.POM
+package com.demo.POMwithConfig
 import org.openqa.selenium.By
 import org.openqa.selenium.WebDriver
 import org.openqa.selenium.WebElement
@@ -7,12 +7,14 @@ import org.openqa.selenium.support.ui.WebDriverWait
 import org.testng.Assert
 
 abstract class BasePageObject {
-	protected WebDriver driver;
-	protected WebDriverWait wait;
+	protected def driver
+	protected def wait
+
+	protected def config = FrameworkConfig.getConfig()
 
 	BasePageObject(WebDriver driver) {
 		this.driver = driver
-		wait = new WebDriverWait(this.driver,30,10)
+		wait = new WebDriverWait(this.driver, config.WEBDRIVERWAIT_TIMEOUT, config.WEBDRIVERWAIT_POLL)
 		
 		isLoaded()
 	}
