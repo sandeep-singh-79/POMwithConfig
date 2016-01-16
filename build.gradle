@@ -1,0 +1,27 @@
+// Apply the plugin to add support for groovy, eclipse and intellij.
+apply plugin: 'java'
+apply plugin: 'eclipse'
+apply plugin: 'idea'
+
+repositories {
+    mavenCentral()
+}
+
+dependencies {
+    compile 'org.codehaus.groovy:groovy-all:2.3.10'
+    compile 'org.seleniumhq.selenium:selenium-java:2.45.0'
+	compile 'com.google.inject:guice:3.0'
+    // testCompile dependency to testCompile 'org.testng:testng:6.8.1' and add
+    // 'test.useTestNG()' to your build script.
+    compile 'org.testng:testng:6.8.1'
+}
+
+tasks.withType(Test) {
+	useTestNG()/*{
+		useDefaultListeners = true
+	}*/
+	
+	systemProperties = System.getProperties()
+	
+	maxParallelForks = 2
+}
